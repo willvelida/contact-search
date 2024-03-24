@@ -5,11 +5,6 @@ using ContactSearch.Application.Profiles;
 using ContactSearch.Domain.Entities;
 using Moq;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactSearch.Application.UnitTests.EmailAddress.Commands
 {
@@ -17,6 +12,7 @@ namespace ContactSearch.Application.UnitTests.EmailAddress.Commands
     {
         private readonly IMapper _mapper;
         private readonly Mock<IAsyncRepository<Email>> _mockEmailRepository;
+        private readonly CreateEmailAddressCommandHandler _createEmailAddressCommandHandler;
 
         public CreateEmailAddressTests()
         {
@@ -27,19 +23,19 @@ namespace ContactSearch.Application.UnitTests.EmailAddress.Commands
             });
 
             _mapper = configurationProvider.CreateMapper();
+            _createEmailAddressCommandHandler = new CreateEmailAddressCommandHandler(_mapper, _mockEmailRepository.Object);
         }
 
         [Fact]
         public async Task Handle_ValidCommand_ReturnsSuccessResponse()
         {
             // Arrange
-            var handler = new CreateEmailAddressCommandHandler(_mapper, _mockEmailRepository.Object);
             var command = new CreateEmailAddressCommand { EmailAddress = "test@example.com" };
 
             _mockEmailRepository.Setup(repo => repo.AddAsync(It.IsAny<Email>())).ReturnsAsync(new Email { EmailId = Guid.NewGuid(), EmailAddress = "test@example.com" });
 
             // Act
-            var response = await handler.Handle(command, CancellationToken.None);
+            var response = await _createEmailAddressCommandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Success.ShouldBeTrue();
@@ -52,11 +48,10 @@ namespace ContactSearch.Application.UnitTests.EmailAddress.Commands
         public async Task Handle_InvalidCommand_ReturnsValidationError_NoEmailAddress()
         {
             // Arrange
-            var handler = new CreateEmailAddressCommandHandler(_mapper, _mockEmailRepository.Object);
             var command = new CreateEmailAddressCommand();
 
             // Act
-            var response = await handler.Handle(command, CancellationToken.None);
+            var response = await _createEmailAddressCommandHandler.Handle(command, CancellationToken.None);
 
             // Assert
             response.Success.ShouldBeFalse();
