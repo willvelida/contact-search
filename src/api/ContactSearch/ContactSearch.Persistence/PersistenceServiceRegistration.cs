@@ -19,6 +19,7 @@ namespace ContactSearch.Persistence
             services.AddScoped<IEmailRepository, EmailRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IPhoneRepository, PhoneRepository>();
+            services.AddScoped<IAddressRepository, AddressRepository>();
 
             return services;
         }
