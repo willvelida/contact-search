@@ -5,11 +5,6 @@ using ContactSearch.Application.Profiles;
 using ContactSearch.Domain.Entities;
 using Moq;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactSearch.Application.UnitTests.Contacts.Commands
 {
@@ -42,7 +37,7 @@ namespace ContactSearch.Application.UnitTests.Contacts.Commands
                 DateOfBirth = new DateTime(1991, 1, 1)
             };
             var contactGuid = new Guid();
-            var contact = new Contact() { ContactId = contactGuid, FirstName = command.FirstName, LastName = command.LastName, DateOfBirth = command.DateOfBirth };     
+            var contact = new Contact() { ContactId = contactGuid, FirstName = command.FirstName, LastName = command.LastName, DateOfBirth = command.DateOfBirth };
 
             _mockContactRepository.Setup(repo => repo.AddAsync(It.IsAny<Contact>())).ReturnsAsync(contact);
 

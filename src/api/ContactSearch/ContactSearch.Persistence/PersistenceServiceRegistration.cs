@@ -18,6 +18,7 @@ namespace ContactSearch.Persistence
             services.AddScoped(typeof(IAsyncRepository<>), typeof(BaseRepository<>));
             services.AddScoped<IEmailRepository, EmailRepository>();
             services.AddScoped<IContactRepository, ContactRepository>();
+            services.AddScoped<IPhoneRepository, PhoneRepository>();
 
             return services;
         }
