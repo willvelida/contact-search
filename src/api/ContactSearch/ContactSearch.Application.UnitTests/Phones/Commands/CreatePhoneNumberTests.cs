@@ -32,7 +32,7 @@ namespace ContactSearch.Application.UnitTests.Phones.Commands
             // Arrange
             var command = new CreatePhoneNumberCommand { PhoneNumber = "0123456789" };
 
-            _mockPhoneRepository.Setup(repo => repo.AddAsync(It.IsAny<Phone>())).ReturnsAsync(new Phone { PhoneNumberId = Guid.NewGuid(), PhoneNumber = "0123456789" });
+            _mockPhoneRepository.Setup(repo => repo.AddAsync(It.IsAny<Phone>())).ReturnsAsync(new Phone { PhoneId = Guid.NewGuid(), PhoneNumber = "0123456789" });
 
             // Act
             var response = await _createPhoneNumberCommandHandler.Handle(command, CancellationToken.None);

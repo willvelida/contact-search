@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSearch.Domain", "ContactSearch.Domain\ContactSearch.Domain.csproj", "{15BFE47D-508E-41C9-8633-FE39B466EF76}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSearch.Domain", "ContactSearch.Domain\ContactSearch.Domain.csproj", "{15BFE47D-508E-41C9-8633-FE39B466EF76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSearch.Application", "ContactSearch.Application\ContactSearch.Application.csproj", "{CB930425-5F44-428F-9093-F2ADE4C75BB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSearch.Application", "ContactSearch.Application\ContactSearch.Application.csproj", "{CB930425-5F44-428F-9093-F2ADE4C75BB9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSearch.Persistence", "ContactSearch.Persistence\ContactSearch.Persistence.csproj", "{D277C581-857F-4231-8E34-D8494BD3A0E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSearch.Persistence", "ContactSearch.Persistence\ContactSearch.Persistence.csproj", "{D277C581-857F-4231-8E34-D8494BD3A0E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSearch.Application.UnitTests", "ContactSearch.Application.UnitTests\ContactSearch.Application.UnitTests.csproj", "{ED4C6877-B511-4FB9-B7E5-610935970CE5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSearch.Application.UnitTests", "ContactSearch.Application.UnitTests\ContactSearch.Application.UnitTests.csproj", "{ED4C6877-B511-4FB9-B7E5-610935970CE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSearch.Api", "ContactSearch.Api\ContactSearch.Api.csproj", "{20F2B0BF-7334-49CD-A356-DD907BF398EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{ED4C6877-B511-4FB9-B7E5-610935970CE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ED4C6877-B511-4FB9-B7E5-610935970CE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ED4C6877-B511-4FB9-B7E5-610935970CE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20F2B0BF-7334-49CD-A356-DD907BF398EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20F2B0BF-7334-49CD-A356-DD907BF398EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20F2B0BF-7334-49CD-A356-DD907BF398EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20F2B0BF-7334-49CD-A356-DD907BF398EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
