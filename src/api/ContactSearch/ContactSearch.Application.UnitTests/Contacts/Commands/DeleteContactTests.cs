@@ -2,7 +2,6 @@
 using ContactSearch.Application.Persistence;
 using ContactSearch.Domain.Entities;
 using Moq;
-using Shouldly;
 
 namespace ContactSearch.Application.UnitTests.Contacts.Commands
 {
@@ -32,6 +31,6 @@ namespace ContactSearch.Application.UnitTests.Contacts.Commands
 
             // Assert
             _mockContactRepository.Verify(repo => repo.DeleteAsync(It.IsAny<Contact>()), Times.Once);
-        }        
+        }
     }
 }
