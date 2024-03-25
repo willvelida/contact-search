@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSearch.Persistence",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSearch.Application.UnitTests", "ContactSearch.Application.UnitTests\ContactSearch.Application.UnitTests.csproj", "{ED4C6877-B511-4FB9-B7E5-610935970CE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSearch.Api", "ContactSearch.Api\ContactSearch.Api.csproj", "{20F2B0BF-7334-49CD-A356-DD907BF398EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactSearch.Api", "ContactSearch.Api\ContactSearch.Api.csproj", "{20F2B0BF-7334-49CD-A356-DD907BF398EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactSearch.Persistence.IntegrationTests", "ContactSearch.Persistence.IntegrationTests\ContactSearch.Persistence.IntegrationTests.csproj", "{D565DE2A-790C-475F-BBCF-19EB9A8A9C52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{20F2B0BF-7334-49CD-A356-DD907BF398EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20F2B0BF-7334-49CD-A356-DD907BF398EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20F2B0BF-7334-49CD-A356-DD907BF398EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D565DE2A-790C-475F-BBCF-19EB9A8A9C52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D565DE2A-790C-475F-BBCF-19EB9A8A9C52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D565DE2A-790C-475F-BBCF-19EB9A8A9C52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D565DE2A-790C-475F-BBCF-19EB9A8A9C52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

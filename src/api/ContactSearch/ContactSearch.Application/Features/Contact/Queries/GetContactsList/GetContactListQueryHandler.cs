@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using ContactSearch.Application.Persistence;
-using ContactSearch.Domain.Entities;
 using MediatR;
+using mdl = ContactSearch.Domain.Entities;
 
 namespace ContactSearch.Application.Features.Contacts.Queries.GetContactsList
 {
     public class GetContactListQueryHandler : IRequestHandler<GetContactListQuery, List<ContactListViewModel>>
     {
-        private readonly IAsyncRepository<Contact> _contactRepository;
+        private readonly IAsyncRepository<mdl.Contact> _contactRepository;
         private readonly IMapper _mapper;
 
-        public GetContactListQueryHandler(IMapper mapper, IAsyncRepository<Contact> contactRepository)
+        public GetContactListQueryHandler(IMapper mapper, IAsyncRepository<mdl.Contact> contactRepository)
         {
             _contactRepository = contactRepository;
             _mapper = mapper;

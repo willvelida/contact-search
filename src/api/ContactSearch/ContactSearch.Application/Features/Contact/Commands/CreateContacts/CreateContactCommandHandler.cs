@@ -1,16 +1,16 @@
 ﻿using AutoMapper;
 using ContactSearch.Application.Persistence;
-using ContactSearch.Domain.Entities;
 using MediatR;
+using mdl = ContactSearch.Domain.Entities;
 
 namespace ContactSearch.Application.Features.Contacts.Commands.CreateContacts
 {
     public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand, CreateContactCommandResponse>
     {
-        private readonly IAsyncRepository<Contact> _contactRepository;
+        private readonly IAsyncRepository<mdl.Contact> _contactRepository;
         private readonly IMapper _mapper;
 
-        public CreateContactCommandHandler(IMapper mapper, IAsyncRepository<Contact> contactRepository)
+        public CreateContactCommandHandler(IMapper mapper, IAsyncRepository<mdl.Contact> contactRepository)
         {
             _contactRepository = contactRepository;
             _mapper = mapper;
@@ -35,7 +35,7 @@ namespace ContactSearch.Application.Features.Contacts.Commands.CreateContacts
 
             if (createContactCommandRepsonse.Success)
             {
-                var contact = new Contact() { FirstName = request.FirstName, LastName = request.LastName, DateOfBirth = request.DateOfBirth };
+                var contact = new mdl.Contact() { FirstName = request.FirstName, LastName = request.LastName, DateOfBirth = request.DateOfBirth };
                 contact = await _contactRepository.AddAsync(contact);
                 createContactCommandRepsonse.Contact = _mapper.Map<CreateContactDto>(contact);
             }

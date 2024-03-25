@@ -23,6 +23,14 @@ namespace ContactSearch.Api.Extensions
                 .Produces(StatusCodes.Status200OK)
                 .WithOpenApi()
                 .WithSummary("Retrieves all contacts");
+
+            // GET : ID
+            contactEndpoints.MapGet("/{contactId:guid}", ContactHandlers.GetContactById)
+                .WithName("GetContact")
+                .Produces(StatusCodes.Status200OK)
+                .Produces(StatusCodes.Status404NotFound)
+                .WithOpenApi()
+                .WithSummary("Retrieves a contact by a given ID");
         }
     }
 }

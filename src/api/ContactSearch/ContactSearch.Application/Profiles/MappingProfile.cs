@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ContactSearch.Application.Features.Addresses.Commands.CreateAddress;
+using ContactSearch.Application.Features.Contact.Queries.GetContactById;
 using ContactSearch.Application.Features.Contacts.Commands.CreateContacts;
 using ContactSearch.Application.Features.Contacts.Queries.GetContactsList;
 using ContactSearch.Application.Features.EmailAddress.Commands.CreateEmailAddress;
@@ -16,6 +17,7 @@ namespace ContactSearch.Application.Profiles
 
             CreateMap<Contact, CreateContactDto>().ReverseMap();
             CreateMap<Contact, ContactListViewModel>();
+            CreateMap<Contact, GetContactByIdViewModel>();
 
             CreateMap<Phone, CreatePhoneNumberDto>().ReverseMap();
 
