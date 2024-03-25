@@ -21,5 +21,6 @@ app.UseSwaggerUI();
 app.UseHttpsRedirection();
 
 app.RegisterContactEndpoints();
+app.RegisterAddressEndpoints();
 
 app.Run();

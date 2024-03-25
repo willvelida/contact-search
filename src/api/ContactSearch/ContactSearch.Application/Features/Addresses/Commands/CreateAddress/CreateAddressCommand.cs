@@ -10,5 +10,6 @@ namespace ContactSearch.Application.Features.Addresses.Commands.CreateAddress
         public string State { get; set; } = string.Empty;
         public string ZipCode { get; set; } = string.Empty;
         public string Country { get; set; } = string.Empty;
+        public Guid ContactId { get; set; }
     }
 }

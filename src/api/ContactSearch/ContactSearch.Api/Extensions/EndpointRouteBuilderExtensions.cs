@@ -1,5 +1,6 @@
 ﻿using ContactSearch.Api.EndpointHandlers;
 using ContactSearch.Application.Features.Contacts.Commands.CreateContacts;
+using ContactSearch.Application.Features.Contacts.Commands.UpdateCommand;
 
 namespace ContactSearch.Api.Extensions
 {
@@ -48,6 +49,19 @@ namespace ContactSearch.Api.Extensions
                 .WithOpenApi()
                 .WithName("Updates a contact by a given ID");
 
+        }
+
+        public static void RegisterAddressEndpoints(this IEndpointRouteBuilder endpointRouteBuilder)
+        {
+            var addressEndpoints = endpointRouteBuilder.MapGroup("/contact/{contactId:guid}/address");
+
+            // CREATE
+            addressEndpoints.MapPost("", AddressHandlers.CreateAddressAsync)
+                .WithName("CreateAddress")
+                .Accepts<UpdateContactCommand>("application/json")
+                .Produces(StatusCodes.Status201Created)
+                .WithOpenApi()
+                .WithSummary("Create an address for a contact");
         }
     }
 }

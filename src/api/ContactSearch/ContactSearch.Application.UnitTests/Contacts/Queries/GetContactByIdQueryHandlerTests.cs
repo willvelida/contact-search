@@ -12,11 +12,13 @@ namespace ContactSearch.Application.UnitTests.Contacts.Queries
     {
         private readonly IMapper _mapper;
         private readonly Mock<IAsyncRepository<Contact>> _mockContactRepository;
+        private readonly Mock<IAddressRepository> _mockAddressRepository;
         private readonly GetContactByIdQueryHandler _getContactByIdQueryHandler;
 
         public GetContactByIdQueryHandlerTests()
         {
             _mockContactRepository = Mocks.ContactRepositoryMock.GetContactRepository();
+            _mockAddressRepository = new Mock<IAddressRepository>();
             var configurationProvider = new MapperConfiguration(cfg =>
             {
                 cfg.AddProfile<MappingProfile>();
@@ -24,7 +26,7 @@ namespace ContactSearch.Application.UnitTests.Contacts.Queries
 
             _mapper = configurationProvider.CreateMapper();
 
-            _getContactByIdQueryHandler = new GetContactByIdQueryHandler(_mapper, _mockContactRepository.Object);
+            _getContactByIdQueryHandler = new GetContactByIdQueryHandler(_mapper, _mockContactRepository.Object, _mockAddressRepository.Object);
         }
 
         [Fact]
@@ -36,7 +38,7 @@ namespace ContactSearch.Application.UnitTests.Contacts.Queries
                 ContactId = new Guid(),
                 FirstName = "Will",
                 LastName = "Velida",
-                DateOfBirth = new DateTime(1991, 3, 5)
+                DateOfBirth = new DateTime(1991, 3, 5),
             };
 
             var query = new GetContactByIdQuery(contact.ContactId);

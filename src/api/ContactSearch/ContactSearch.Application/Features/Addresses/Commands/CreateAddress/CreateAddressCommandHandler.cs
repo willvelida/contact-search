@@ -34,7 +34,7 @@ namespace ContactSearch.Application.Features.Addresses.Commands.CreateAddress
 
             if (createAddressCommandResponse.Success)
             {
-                var address = new Address() { AddressLine1 = request.AddressLine1, AddressLine2 = request.AddressLine2, City = request.City, Country = request.Country, ZipCode = request.ZipCode, State = request.State };
+                var address = new Address() { AddressLine1 = request.AddressLine1, AddressLine2 = request.AddressLine2, City = request.City, Country = request.Country, ZipCode = request.ZipCode, State = request.State, ContactId = request.ContactId };
                 address = await _addressRepository.AddAsync(address);
                 createAddressCommandResponse.Address = _mapper.Map<CreateAddressDto>(address);
             }
