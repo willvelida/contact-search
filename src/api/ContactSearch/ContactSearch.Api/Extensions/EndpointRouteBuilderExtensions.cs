@@ -31,6 +31,14 @@ namespace ContactSearch.Api.Extensions
                 .Produces(StatusCodes.Status404NotFound)
                 .WithOpenApi()
                 .WithSummary("Retrieves a contact by a given ID");
+
+            // DELETE : ID
+            contactEndpoints.MapDelete("/{contactId:guid}", ContactHandlers.DeleteContactAsync)
+                .WithName("DeleteContact")
+                .Produces(StatusCodes.Status204NoContent)
+                .Produces(StatusCodes.Status404NotFound)
+                .WithOpenApi()
+                .WithName("Deletes a Contact by a given ID");
         }
     }
 }

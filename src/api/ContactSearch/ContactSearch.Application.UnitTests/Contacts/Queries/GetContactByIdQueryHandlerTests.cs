@@ -5,11 +5,6 @@ using ContactSearch.Application.Profiles;
 using ContactSearch.Domain.Entities;
 using Moq;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ContactSearch.Application.UnitTests.Contacts.Queries
 {
